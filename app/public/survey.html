@@ -1,50 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Tables Page</title>
+    <meta charset="UTF-8">
+    <title>Tables Page</title>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="jumbotron">
-      <h1 class="text-center"> Friend Finder</h1>
-      <hr>
-      <h2 class="text-center">answer the questions rating in interest from 1 to 5, be honest, it important when finding friends</h2>
-      <br>
+        <div class="jumbotron">
+            <h1 class="text-center"> Friend Finder</h1>
+            <hr>
+            <h2 class="text-center">answer the questions rating in interest from 1 to 5, be honest, it important when
+                finding friends</h2>
+            <br>
 
-      <div class="text-center">
-        <a href="/home"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Take Me Home!</button></a>
-        
-      </div>
+            <div class="text-center">
+                <a href="/home"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Take Me
+                        Home!</button></a>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-header">
+                        Survey
+                    </div>
+                    <div class="card-body" id="questions">
+                        <form role="form">
+                            <div class="form-group">
+
+                        </form>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary submit">Submit</button>
+            </div>
+        </div>
 
     </div>
 
-    <div class="row">
-        <div class="col-lg-12">
-          
-          <div class="card">
-            <div class="card-header">
-              Survey
-            </div>
-            <div class="card-body">
-              <form role="form">
-                <div class="form-group">
-                  
-                <button type="submit" class="btn btn-primary submit">Submit</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-</div>
-    
 </body>
+<script>
+    let questions = [
+        {
+            question: "Dota is the greatest game ever made",
+            choices: [1, 2, 3, 4, 5]
+        },
+        {
+            question: "Backend coding is the best!",
+            choices: [1, 2, 3, 4, 5]
+        },
+        {
+            question: "The Suns are the greatest basketball team of all time",
+            choices: [1, 2, 3, 4, 5]
+        },
+        {
+            question: "The Suns are the greatest basketball team of all time",
+            choices: [1, 2, 3, 4, 5]
+        },
+        {
+            question: "The Suns are the greatest basketball team of all time",
+            choices: [1, 2, 3, 4, 5]
+        },
+        {
+            question: "The Suns are the greatest basketball team of all time",
+            choices: [1, 2, 3, 4, 5]
+        },
+        {
+            question: "The Suns are the greatest basketball team of all time",
+            choices: [1, 2, 3, 4, 5]
+        },
+        {
+            question: "The Suns are the greatest basketball team of all time",
+            choices: [1, 2, 3, 4, 5]
+        },
+        {
+            question: "The Suns are the greatest basketball team of all time",
+            choices: [1, 2, 3, 4, 5]
+        },
+        {
+            question: "The Suns are the greatest basketball team of all time",
+            choices: [1, 2, 3, 4, 5]
+        },
+
+    ];
+
+    for (let i = 0; i < questions.length; i++) {
+        //appends questions
+        const trivia = questions[i].question;
+        $('#questions').append("<p class='toAnswer'>" + trivia + '</p>');
+        //appends list of choices
+        var ulId = 'q' + i.toString();
+        let htmlTemplate = "<ul id='" + ulId + "' class='jake-list'>";
+        for (let k = 0; k < questions[i].choices.length; k++) {
+            htmlTemplate +=
+                "<li><input type='radio' name='" +
+                ulId +
+                "' value=" +
+                k +
+                '>' +
+                questions[i].choices[k] +
+                '</li>';
+        }
+        htmlTemplate += '</ul>';
+        $('#questions').append(htmlTemplate);
+    }
+</script>
+
 </html>
