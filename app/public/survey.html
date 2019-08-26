@@ -42,11 +42,11 @@
                     <div class="card-body" id="questions">
                         <div class="form-group">
                             <label for="reserve-name">Name</label>
-                            <input type="text" class="form-control" id="reserve-name">
+                            <input type="text" class="form-control" id="friend-name">
                         </div>
                         <div class="form-group">
                             <label for="reserve-phone">Picture link</label>
-                            <input type="text" class="form-control" id="reserve-phone">
+                            <input type="text" class="form-control" id="picture-link">
                         </div>
                         <form role="form">
                             <div class="form-group">
@@ -128,10 +128,33 @@
         $('#questions').append(htmlTemplate);
     }
 
-    // let newFriend = {
-    //     Name:
+    let newFriend = {
+        Name: $("#friend-name").val().trim(),
+        Picture: $("#picture-link").val().trim(),
+        scores: [$(".jake-list").val()]
          
-    // }
+    };
+
+    $.post("/api/friends", newReservation,
+      function(data) {
+
+        
+        if (data) {
+          alert("Yay");
+        }
+
+        
+        else {
+          alert("sorry our bad");
+        }
+
+        
+        $("#fiend-name").val("");
+        $("#picture-link").val("");
+        $(".jake-list").clear();
+        
+
+      });
 
 
 </script>
