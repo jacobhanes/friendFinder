@@ -1,6 +1,6 @@
 const friends = require("../data/friends");
 
-module.exports = (app) => {
+module.exports = function(app) {
 
     app.get("/api/friends", (req, res) => {
         res.json(friends);
@@ -11,4 +11,4 @@ module.exports = (app) => {
         friends.push(req.body)
         res.json(true)
       });
-}
+};
