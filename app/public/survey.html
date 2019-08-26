@@ -38,11 +38,21 @@
                     <div class="card-header">
                         Survey
                     </div>
+
                     <div class="card-body" id="questions">
+                        <div class="form-group">
+                            <label for="reserve-name">Name</label>
+                            <input type="text" class="form-control" id="reserve-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="reserve-phone">Picture link</label>
+                            <input type="text" class="form-control" id="reserve-phone">
+                        </div>
                         <form role="form">
                             <div class="form-group">
 
                         </form>
+
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary submit">Submit</button>
@@ -117,6 +127,13 @@
         htmlTemplate += '</ul>';
         $('#questions').append(htmlTemplate);
     }
+
+    // let newFriend = {
+    //     Name:
+         
+    // }
+
+
 </script>
 
 </html>
